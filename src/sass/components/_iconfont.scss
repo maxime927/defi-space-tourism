@@ -1,0 +1,63 @@
+/* ---- Icons Font ---- */
+@font-face {
+  font-family: "spaceicon";
+  src: url('../fonts/icons/spaceicon.eot');
+  src: url('../fonts/icons/spaceicon.eot?#iefix') format('eot'),
+    url('../fonts/icons/spaceicon.woff2') format('woff2'),
+    url('../fonts/icons/spaceicon.woff') format('woff'),
+    url('../fonts/icons/spaceicon.ttf') format('truetype'),
+    url('../fonts/icons/spaceicon.svg#spaceicon') format('svg');
+}
+
+@mixin icon-styles {
+  font-family: "spaceicon", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  // speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+  text-decoration: none;
+  text-transform: none;
+}
+
+%icon {
+  @include icon-styles;
+}
+
+@function icon-char($filename) {
+  $char: "";
+
+  @if $filename == close {
+    $char: "\E001";
+  }
+  @if $filename == hamburger {
+    $char: "\E002";
+  }
+  @if $filename == space {
+    $char: "\E003";
+  }
+
+  @return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+  &:#{$insert} {
+    @if $extend {
+      @extend %icon;
+    } @else {
+      @include icon-styles;
+    }
+    content: icon-char($filename);
+  }
+}
+
+.icon-close {
+  @include icon(close);
+}
+.icon-hamburger {
+  @include icon(hamburger);
+}
+.icon-space {
+  @include icon(space);
+}

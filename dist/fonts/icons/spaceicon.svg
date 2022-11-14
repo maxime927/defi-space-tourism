@@ -1,0 +1,22 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="spaceicon" horiz-adv-x="54.857142857142854">
+    <font-face font-family="spaceicon"
+      units-per-em="48" ascent="48"
+      descent="0"
+      font-weight="1001" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="close"
+      unicode="&#xE001;"
+      horiz-adv-x="45.71428571428571" d="M5.8857142857143 45.8194285714286L44.6742857142857 7.0308571428571L39.8285714285714 2.1805714285714L1.04 40.9691428571429zM1.0377142857143 7.0285714285714L39.8262857142857 45.8171428571429L44.6765714285714 40.9714285714286L5.888 2.1828571428572z" />
+    <glyph glyph-name="hamburger"
+      unicode="&#xE002;"
+      horiz-adv-x="54.857142857142854" d="M0 48H54.8571428571429V41.1428571428571H0zM0 27.4285714285714H54.8571428571429V20.5714285714286H0zM0 6.8571428571429H54.8571428571429V0H0z" />
+    <glyph glyph-name="space"
+      unicode="&#xE003;"
+      horiz-adv-x="48" d="M0 24A24 24 0 0 1 48 24A24 24 0 0 1 0 24M24 48C24 32 16 24 0 24C15.718 23.886 23.718 15.886 24 0C24 16 32 24 48 24C32 24 24 32 24 48z" />
+  </font>
+</defs>
+</svg>

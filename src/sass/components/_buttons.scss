@@ -1,0 +1,35 @@
+/* ---- Buttons ---- */
+.btn {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid;
+  font-size: rem(16px);
+  font-weight: bold;
+  min-height: $btn-height;
+  text-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  white-space: normal;
+  padding: rem(13px) rem(16px) rem(11px);
+  background-image: none;
+  box-shadow: initial;
+  transition: 0.3s;
+  &:focus , &:active , &:active:focus { outline: none; box-shadow: none; }
+  &:hover { text-decoration: none;}
+
+
+  &.btn-white {
+    color: $blue; background-color: $white; border-color: $white;
+    &:focus, &:hover, &:active:focus { background-color: $blue; color: $white; border-color: $blue;}
+  }
+
+
+
+  &[disabled] {
+    pointer-events: none; opacity: 0.5;
+  }
+}
+
