@@ -22,7 +22,7 @@ h5,.h5 { font-size: rem(16px); line-height: rem(19px); letter-spacing: rem(2.7px
   @include min(md){ font-size: rem(28px); line-height: 1.14; letter-spacing: rem(4.725px); }
 }
 
-.subheading-1 { font-family: $font-family-alt-2; font-size: rem(28px); }
-.subheading-2 {
-  @include min(md){ font-size: rem(14px); letter-spacing: rem(2.35px); }
+.subheading-1 { font-family: $font-family-alt; font-size: rem(28px); }
+.subheading-2 { font-family: $font-family-alt-2; font-size: rem(14px); letter-spacing: rem(2.35px); color: $blue; text-transform: uppercase;
+  @include min(md){}
 }

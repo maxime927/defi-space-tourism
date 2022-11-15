@@ -1,0 +1,45 @@
+/**** Destination ****/
+.destination-wrap {
+  section {
+    min-height: 610px; height: 100vh; background-image:url('../img/destination/background-destination-mobile.jpg'); background-size: cover; background-position: bottom; text-align: center; padding: rem(112px) 0 0;
+    @include min(sm){ background-image:url('../img/destination/background-destination-tablet.jpg'); padding: rem(202px) rem(24px) 0; }
+    @include min(md){ background-image:url('../img/destination/background-destination-desktop.jpg'); background-position:center right; text-align: left; padding-bottom: rem(112px); }
+
+    .container {
+      @include min(md){ display: flex; justify-content: space-between; align-items: flex-end; height: 100%; flex-wrap: wrap; }
+    }
+    h1 { width: 100%; }
+
+    .picture {
+      picture {
+        img { display: block; max-width: 100%; }
+      }
+    }
+
+    .text {
+      @include min(sm){ max-width: 450px; margin: 0 auto; }
+      @include min(md){ margin: 0; }
+
+      .tabs-nav {
+        list-style: none; margin: 0; padding: 0;
+
+        li { display: inline-block; }
+      }
+
+      .tab {
+        h2 {}
+        p {
+          font-size: rem(15px); line-height: rem(25px); color: $blue; margin: 0;
+          @include min(sm){ font-size: rem(16px); line-height: rem(28px); }
+          @include min(md){ font-size: rem(18px); line-height: rem(32px); }
+        }
+        .infos {
+          .distance {}
+          .travel-time {}
+        }
+      }
+
+
+    }
+  }
+}
