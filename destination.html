@@ -67,19 +67,19 @@
             <div class="flexbox">
               <div class="picture">
                 <picture>
-                  <source srcset="./dist/img/destination/image-moon.webp" type="image/webp">
-                  <source srcset="./dist/img/destination/image-moon.png" type="image/png">
+                  <source class="webp" srcset="./dist/img/destination/image-moon.webp" type="image/webp">
+                  <source class="png" srcset="./dist/img/destination/image-moon.png" type="image/png">
                   <img src="./dist/img/destination/image-moon.webp" alt="" aria-hidden="true" />
                 </picture>
               </div>
               <div class="text">
                 <ul class="tabs-nav">
-                  <li class="active">Moon</li>
-                  <li>Mars</li>
-                  <li>Europa</li>
-                  <li>Titan</li>
+                  <li class="active" data-target="0">Moon</li>
+                  <li data-target="1">Mars</li>
+                  <li data-target="2">Europa</li>
+                  <li data-target="3">Titan</li>
                 </ul>
-                <div class="tab active" id="tab-0">
+                <div class="tab active show">
                   <h2>Moon</h2>
                   <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help
                   regain perspective and come back refreshed. While you’re there, take in some history
@@ -95,6 +95,7 @@
                     </div>
                   </div>
                 </div>
+
               </div>
 
             </div>
@@ -107,6 +108,6 @@
 
 
   <!-- Scripts -->
-  <script src="dist/js/main.min.js"></script>
+  <script type="module" src="dist/js/main.min.js"></script>
 </body>
 </html>

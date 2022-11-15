@@ -53,21 +53,29 @@
           @include min(sm){ font-size: rem(16px); line-height: rem(19px); letter-spacing: rem(2.7px); padding-bottom: rem(15px); margin: 0 rem(15px); }
           @include min(md){ margin: 0 rem(35px) 0 0; }
 
-          &::before { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; width: 100%; background-color: $white; opacity: 0; }
+          &::before { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); height: 3px; width: 0%; transition: .3s all ease; background-color: $white; opacity: 0; }
 
+          &:hover {
+            &::before { opacity: .25; width: 100%; }
+          }
           &.active {
             color: $white;
-            &::before { opacity: 1; }
+            &::before { opacity: 1; width: 100%;}
           }
         }
       }
 
       // Tab Content
+      .tab-wrapper { position: relative; }
       .tab {
-        padding: rem(20px) 0 0; transition: .3s padding ease;
+        padding: rem(20px) 0 0; transition: .3s all ease; overflow: hidden;
         @include min(sm){ padding-top: rem(32px); }
         @include min(md){ padding-top: rem(20px); }
         @include min(lg){ padding-top: rem(37px); }
+
+        &.hide { display: none; }
+        &.active { display: block; }
+        &:not(.show) { opacity: 0; }
 
         h2 { transition: .3s all ease;}
         p {
@@ -92,8 +100,17 @@
           }
         }
       }
-
-
     }
   }
+}
+
+@keyframes fadeIn {
+  0% { max-height: 0px; opacity: 0;}
+  99% { max-height: 1000px; opacity: 1; }
+  100% { max-height: 1000px; opacity: 1; }
+}
+@keyframes fadeOut {
+  0% { max-height: 1000px; opacity: 1; }
+  99% { max-height: 1000px; }
+  100% { max-height: 0px; opacity: 0; }
 }
