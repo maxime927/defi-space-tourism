@@ -1,4 +1,32 @@
 /* ---- Home ---- */
 .home-wrap {
+  .baseline {
+    min-height: 610px; height: 100vh; background-image:url('../img/home/background-home-mobile.jpg'); background-size: cover; background-position: bottom; text-align: center; padding: rem(112px) 0 0;
+    @include min(sm){ background-image:url('../img/home/background-home-tablet.jpg'); padding: rem(202px) rem(24px) 0; }
+    @include min(md){ background-image:url('../img/home/background-home-desktop.jpg'); background-position:center right; text-align: left; padding-bottom: rem(131px); }
 
+    .container {
+      @include min(md){ display: flex; justify-content: space-between; align-items: flex-end; height: 100%;}
+    }
+
+    .text {
+      @include min(sm){ max-width: 450px; margin: 0 auto; }
+      @include min(md){ margin: 0; }
+
+      .h5 {}
+      h1 {}
+      p {
+        font-size: rem(15px); line-height: rem(25px); color: $blue; margin: 0;
+        @include min(sm){ font-size: rem(16px); line-height: rem(28px); }
+        @include min(md){ font-size: rem(18px); line-height: rem(32px); }
+      }
+    }
+    .cta {
+      position: absolute; bottom: 48px; left: 0; right: 0; text-align: center; display: flex; justify-content: center;
+      @include min(sm){ bottom: 90px; }
+      @include min(md){ bottom: auto; position: relative; left: auto; right: auto; justify-content: flex-end; }
+
+      .main-btn {}
+    }
+  }
 }

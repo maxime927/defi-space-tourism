@@ -1,26 +1,28 @@
 /* ---- Commons ---- */
 
 // Typography
-h1, h2, h3, h4 { font-family: $font-family-alt; }
-h5, h6 { font-family: $font-family-base; }
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 { font-family: $font-family-alt; text-transform: uppercase; font-weight: 400; }
+h5, h6,.h5, .h6 { font-family: $font-family-alt-2; text-transform: uppercase; font-weight: 400; }
 
-h1 {
-  @include min(md){ font-size: rem(150px); color: $white; }
+h1, .h1 { font-size: rem(80px); line-height: 1.25; margin-bottom: rem(14px); color: $white;
+  @include min(sm){ font-size: rem(150px); line-height: rem(150px); margin-bottom: rem(24px); }
+  @include min(md){ line-height: rem(172px); }
 }
-h2 {
-  @include min(md){ font-size: rem(100px); color: $white; }
+h2, .h2 { color: $white;
+  @include min(md){ font-size: rem(100px); }
 }
-h3 {
-  @include min(md){ font-size: rem(56px); color: $white; }
+h3, .h3 { color: $white;
+  @include min(md){ font-size: rem(56px); }
 }
-h4 {
-  @include min(md){ font-size: rem(32px); color: $white; }
+h4,.h4 { color: $white;
+  @include min(md){ font-size: rem(32px); }
 }
-h5 {
-  @include min(md){ font-size: rem(28px); letter-spacing: rem(4.725px); color: $blue; }
+h5,.h5 { font-size: rem(16px); line-height: rem(19px); letter-spacing: rem(2.7px); margin-bottom: rem(16px); color: $blue;
+  @include min(sm){ font-size: rem(20px); line-height: rem(24px); letter-spacing: rem(3.375px); margin-bottom: rem(24px); }
+  @include min(md){ font-size: rem(28px); line-height: 1.14; letter-spacing: rem(4.725px); }
 }
 
-.subheading-1 { font-family: $font-family-alt; font-size: rem(28px); }
+.subheading-1 { font-family: $font-family-alt-2; font-size: rem(28px); }
 .subheading-2 {
   @include min(md){ font-size: rem(14px); letter-spacing: rem(2.35px); }
 }

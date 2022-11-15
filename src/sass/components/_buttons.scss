@@ -1,35 +1,47 @@
 /* ---- Buttons ---- */
-.btn {
-  display: inline-block;
-  background: transparent;
-  border: 2px solid;
-  font-size: rem(16px);
-  font-weight: bold;
-  min-height: $btn-height;
-  text-shadow: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  text-decoration: none;
-  white-space: normal;
-  padding: rem(13px) rem(16px) rem(11px);
-  background-image: none;
-  box-shadow: initial;
-  transition: 0.3s;
-  &:focus , &:active , &:active:focus { outline: none; box-shadow: none; }
-  &:hover { text-decoration: none;}
+// .btn {
+//   display: inline-block;
+//   background: transparent;
+//   border: 2px solid;
+//   font-size: rem(16px);
+//   font-weight: bold;
+//   min-height: $btn-height;
+//   text-shadow: none;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   -ms-appearance: none;
+//   appearance: none;
+//   text-decoration: none;
+//   white-space: normal;
+//   padding: rem(13px) rem(16px) rem(11px);
+//   background-image: none;
+//   box-shadow: initial;
+//   transition: 0.3s;
+//   &:focus , &:active , &:active:focus { outline: none; box-shadow: none; }
+//   &:hover { text-decoration: none;}
+//
+//
+//   &.btn-white {
+//     color: $blue; background-color: $white; border-color: $white;
+//     &:focus, &:hover, &:active:focus { background-color: $blue; color: $white; border-color: $blue;}
+//   }
+//
+//
+//
+//   &[disabled] {
+//     pointer-events: none; opacity: 0.5;
+//   }
+// }
 
+.main-btn { display: flex; flex-direction: column; justify-content: center; background: $white; color: $black; padding: rem(27px) rem(20px) rem(20px); width: 150px; height: 150px; border-radius: 50%; line-height: rem(23px); font-size: rem(20px); font-weight: 400; letter-spacing: rem(1.25px); text-transform: uppercase; font-family: $font-family-alt;
+  @include min(sm){ width: 242px; height: 242px; font-size: rem(32px); line-height: rem(38px); letter-spacing: rem(2px); }
+  @include min(md){ width: 274px; height: 274px; padding-top: 21px; }
 
-  &.btn-white {
-    color: $blue; background-color: $white; border-color: $white;
-    &:focus, &:hover, &:active:focus { background-color: $blue; color: $white; border-color: $blue;}
+  &:focus, &:hover, &:active:focus { text-decoration: none;
+    @include min(md){ box-shadow: 0 0 1px 88px rgba($white,.1); }
   }
-
-
-
-  &[disabled] {
-    pointer-events: none; opacity: 0.5;
+  &:active,&:active:focus {
+    @include min(md){ box-shadow: 0 0 1px 78px rgba($white,.1); }
   }
 }
 

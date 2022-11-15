@@ -45,6 +45,9 @@ p {
     display: flex; flex-direction: column-reverse;
   }
 }
+.container { max-width: 1158px; padding: 0 rem(24px); margin: 0 auto;
+  @include min(sm){ max-width: 1188px; padding: 0 rem(39px); }
+}
 
 // Fix Google Map
 .google-map [aria-hidden] { display: block }

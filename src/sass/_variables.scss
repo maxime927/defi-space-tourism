@@ -19,8 +19,9 @@ $grid-gutter-width: 15px;
 
 // Fonts
 @import "mixins/strip-unit";
-$font-family-base: 'Barlow Condensed', sans-serif;
+$font-family-base: 'Barlow', sans-serif;
 $font-family-alt: 'Bellefair', serif;
+$font-family-alt-2: 'Barlow Condensed', sans-serif;
 
   // Fz Bootstrap
   $font-size-base: 1rem /* 16px*/;
