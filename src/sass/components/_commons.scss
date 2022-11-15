@@ -8,8 +8,10 @@ h1, .h1 { font-size: rem(80px); line-height: 1.25; margin-bottom: rem(14px); col
   @include min(sm){ font-size: rem(150px); line-height: rem(150px); margin-bottom: rem(24px); }
   @include min(md){ line-height: rem(172px); }
 }
-h2, .h2 { color: $white;
-  @include min(md){ font-size: rem(100px); }
+h2, .h2 { color: $white; font-size: rem(56px); line-height: rem(64px); margin: 0;
+  @include min(sm){ font-size: rem(80px); line-height: rem(92px); margin-bottom: rem(8px); }
+  @include min(md){ margin-bottom: rem(14px); }
+  @include min(lg){ font-size: rem(100px); line-height: rem(115px); margin-bottom: rem(14px); }
 }
 h3, .h3 { color: $white;
   @include min(md){ font-size: rem(56px); }
@@ -22,7 +24,7 @@ h5,.h5 { font-size: rem(16px); line-height: rem(19px); letter-spacing: rem(2.7px
   @include min(md){ font-size: rem(28px); line-height: 1.14; letter-spacing: rem(4.725px); }
 }
 
-.subheading-1 { font-family: $font-family-alt; font-size: rem(28px); }
-.subheading-2 { font-family: $font-family-alt-2; font-size: rem(14px); letter-spacing: rem(2.35px); color: $blue; text-transform: uppercase;
+.subheading-1 { font-family: $font-family-alt; font-size: rem(28px); line-height: rem(32px); text-transform: uppercase; }
+.subheading-2 { font-family: $font-family-alt-2; font-size: rem(14px); letter-spacing: rem(2.35px); color: $blue; text-transform: uppercase; margin-bottom: rem(7px);
   @include min(md){}
 }

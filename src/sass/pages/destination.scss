@@ -1,41 +1,95 @@
 /**** Destination ****/
 .destination-wrap {
   section {
-    min-height: 610px; height: 100vh; background-image:url('../img/destination/background-destination-mobile.jpg'); background-size: cover; background-position: bottom; text-align: center; padding: rem(112px) 0 0;
-    @include min(sm){ background-image:url('../img/destination/background-destination-tablet.jpg'); padding: rem(202px) rem(24px) 0; }
-    @include min(md){ background-image:url('../img/destination/background-destination-desktop.jpg'); background-position:center right; text-align: left; padding-bottom: rem(112px); }
+    min-height: 100vh; background-image:url('../img/destination/background-destination-mobile.jpg'); background-size: cover; background-position: bottom; text-align: center; padding: rem(88px) 0 rem(58px);
+    @include min(sm){ background-image:url('../img/destination/background-destination-tablet.jpg'); padding: rem(136px) 0 rem(62px); }
+    @include min(md){ background-image:url('../img/destination/background-destination-desktop.jpg'); background-position:center right; text-align: left; padding-bottom: rem(50px); padding-top: rem(140px); display: flex; align-items: flex-end;}
+    @include min(lg){ padding-bottom: rem(118px); }
 
     .container {
-      @include min(md){ display: flex; justify-content: space-between; align-items: flex-end; height: 100%; flex-wrap: wrap; }
-    }
-    h1 { width: 100%; }
+      @include min(md){ display: flex; justify-content: flex-end; height: 100%; flex: 1; flex-wrap: wrap; width: 100%; flex-direction: column; }
 
+      >div { display: flex; flex-direction: column;}
+    }
+    h1 { width: 100%; margin-bottom: rem(32px); transition: .3s all ease;
+      @include min(sm){ text-align: left; margin-bottom: rem(59px); }
+      @include min(md){ margin-bottom: rem(30px); }
+      @include min(lg){ margin-bottom: rem(59px); }
+
+      &::before { content:'01'; display: inline-block; font-weight: 700; margin-right: rem(18px); opacity: .25; color: $white;
+        @include min(sm){ margin-right: rem(19px); }
+        @include min(md){ margin-right: rem(28px); }
+      }
+    }
+
+    .flexbox {
+      @include min(md){ display: flex; justify-content: space-between; }
+    }
     .picture {
+      margin-bottom: rem(17px);
+      @include min(sm){ margin-bottom: rem(45px); }
+      @include min(md){ flex: 1; max-width: 565px; display: flex; flex-direction: column; justify-content: center; margin: 0; }
+      @include min(lg){ justify-content: flex-end; }
+
       picture {
-        img { display: block; max-width: 100%; }
+        img {
+          display: block; max-width: 170px; margin: 0 auto; transition: .3s max-width ease;
+          @include min(sm){ max-width: 300px; }
+          @include min(lg){ max-width: 445px; }
+        }
       }
     }
 
     .text {
-      @include min(sm){ max-width: 450px; margin: 0 auto; }
-      @include min(md){ margin: 0; }
+      @include min(sm){ max-width: 573px; margin: 0 auto; }
+      @include min(md){ margin: 0; max-width: 445px; display: flex; flex-direction: column; justify-content: flex-end;}
 
+      // Navigation tabs
       .tabs-nav {
         list-style: none; margin: 0; padding: 0;
 
-        li { display: inline-block; }
+        li {
+          display: inline-block; position: relative; font-size: rem(14px); line-height: rem(17px); letter-spacing: rem(2.3625px); padding-bottom: rem(11px); margin: 0 rem(10px); color: $blue; text-transform: uppercase; cursor: pointer; font-family: $font-family-alt-2;
+          @include min(sm){ font-size: rem(16px); line-height: rem(19px); letter-spacing: rem(2.7px); padding-bottom: rem(15px); margin: 0 rem(15px); }
+          @include min(md){ margin: 0 rem(35px) 0 0; }
+
+          &::before { content: ''; position: absolute; bottom: 0; left: 0; height: 3px; width: 100%; background-color: $white; opacity: 0; }
+
+          &.active {
+            color: $white;
+            &::before { opacity: 1; }
+          }
+        }
       }
 
+      // Tab Content
       .tab {
-        h2 {}
+        padding: rem(20px) 0 0; transition: .3s padding ease;
+        @include min(sm){ padding-top: rem(32px); }
+        @include min(md){ padding-top: rem(20px); }
+        @include min(lg){ padding-top: rem(37px); }
+
+        h2 { transition: .3s all ease;}
         p {
           font-size: rem(15px); line-height: rem(25px); color: $blue; margin: 0;
           @include min(sm){ font-size: rem(16px); line-height: rem(28px); }
           @include min(md){ font-size: rem(18px); line-height: rem(32px); }
         }
         .infos {
-          .distance {}
-          .travel-time {}
+          margin-top: rem(32px); padding-top: rem(24px); border-top: 1px solid rgba($white,.25);
+          @include min(sm){ margin-top: rem(50px); padding-top: rem(20px); display: flex; justify-content: center; }
+          @include min(md){ padding-top: rem(18px); margin-top: rem(54px);}
+
+          .distance {
+            @include min(sm){ }
+          }
+          .travel-time {
+            margin-top: rem(24px);
+            @include min(sm){margin-top: 0;}
+          }
+          .distance, .travel-time {
+            @include min(sm){ width: 220px; margin: 0 5px; }
+          }
         }
       }
 

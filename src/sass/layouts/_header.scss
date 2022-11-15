@@ -26,12 +26,13 @@
 .header-logo {
   width: 40px; height: 40px; display: block; margin: 0; float: left;
   @include min(sm){ width: 48px; height: 48px; margin-top: rem(24px);  }
-  @include min(md){ margin: auto; position: absolute; left: calc(50% - 50vw + 54px); top: 24px;}
+  @include min(md){ margin: auto; position: absolute; left: calc(50% - 50vw + 39px); top: 24px;}
+  @include min(lg){ left: calc(50% - 50vw + 54px); }
 }
 
 // Header mobile burger button
 .btn-menu {
-  float: right; height: 35px; width: 40px; border: none; color: $white; background-color: transparent; padding: 0; margin: 3px -7px 0 0;
+  float: right; position: relative; height: 35px; width: 40px; border: none; color: $white; background-color: transparent; padding: 0; margin: 3px -7px 0 0; z-index: 4;
   @include min(sm){ display: none; }
 
   i { font-size: 20px; }
