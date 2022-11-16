@@ -50,16 +50,37 @@ $(document).ready(function () {
     let target = $(this).attr('data-target');
     $('.slider-tab').removeClass('show');
 
-    // Set new destination informations
+    // Set new crew informations
     $('.picture source.png').attr('srcset',data.crew[target].images.png);
     $('.picture source.webp').attr('srcset',data.crew[target].images.webp);
     $('.picture img').attr('src',data.crew[target].images.webp);
     setTimeout(function(){
-      // Set new destination informations
+      // Set new crew informations
       $('.slider-tab h2').text(data.crew[target].name);
       $('.slider-tab .h4').text(data.crew[target].role);
       $('.slider-tab p').text(data.crew[target].bio);
       $('.slider-tab').addClass('show');
+    }, 200)
+
+  });
+
+  // Technology nav
+  let btnSliderNumberNav = $('.slider-number-nav li');
+  btnSliderNumberNav.click(function() {
+    btnSliderNumberNav.removeClass('active');
+    $(this).addClass('active');
+
+    let target = $(this).attr('data-target');
+    $('.slider-number-tab').removeClass('show');
+
+    // Set new technology informations
+    $('.picture source.jpg').attr('srcset',data.technology[target].images.portrait);
+    $('.picture img').attr('src',data.technology[target].images.landscape);
+    setTimeout(function(){
+      // Set new technology informations
+      $('.slider-number-tab h2').text(data.technology[target].name);
+      $('.slider-number-tab p').text(data.technology[target].description);
+      $('.slider-number-tab').addClass('show');
     }, 200)
 
   });

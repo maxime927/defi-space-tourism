@@ -1,0 +1,102 @@
+/* ---- Crew ---- */
+.technology-wrap {
+  section {
+    min-height: 100vh; background-image:url('../img/technology/background-technology-mobile.jpg'); background-size: cover; background-position: bottom; text-align: center; padding: rem(88px) 0 rem(10px);
+    @include min(sm){ background-image:url('../img/technology/background-technology-tablet.jpg'); padding: rem(136px) 0 0; }
+    @include min(md){ background-image:url('../img/technology/background-technology-desktop.jpg'); background-position:center right; text-align: left; padding-bottom: rem(0); padding-top: rem(212px); display: flex; align-items: flex-end;}
+
+    .container {
+      @include min(sm){ height: calc(100vh - 136px);  }
+      @include min(md){ display: flex; justify-content: flex-end; height: calc(100vh - 212px); flex: 1; flex-wrap: wrap; width: 100%; flex-direction: column; }
+
+      >div { display: flex; flex-direction: column;
+        @include min(sm){ height: 100%; }
+      }
+    }
+    h1 { width: 100%; margin-bottom: rem(32px); transition: .3s all ease; color: $white;
+      @include min(sm){ text-align: left; margin-bottom: rem(59px); }
+      @include min(md){ margin-bottom: rem(30px); }
+      @include min(lg){ margin-bottom: rem(59px); }
+
+      &::before { content:'03'; display: inline-block; font-weight: 700; margin-right: rem(18px); opacity: .25; color: $white;
+        @include min(sm){ margin-right: rem(19px); }
+        @include min(md){ margin-right: rem(28px); }
+      }
+    }
+
+    .flexbox { margin: 0 rem(-24px);
+      @include min(sm){ margin: 0 rem(-39px); }
+      @include min(md){ display: flex; flex-direction: row-reverse; justify-content: space-between; }
+    }
+
+    .picture {
+      @include min(md){ flex: 1; max-width: 565px; display: flex; flex-direction: column; margin: 0; justify-content: flex-end; }
+      @include min(lg){ }
+
+      picture {
+        @include min(md){ margin: rem(-13vh) 0 0; height: calc(100% + 13vh); display: flex; align-items: flex-end; justify-content: flex-end;}
+        @include min(lg){ margin: rem(-150px) 0 0; height: calc(100% + 100px);}
+        img {
+          display: block; max-width: 100%; margin: 0 auto; transition: .3s max-width ease;
+          @include min(sm){ max-width: 100%; }
+          @include min(md){ max-height: 76vh; margin: 0;}
+          @include min(lg){ max-height: none;}
+        }
+      }
+    }
+
+    .text { position: relative; padding: rem(100px) rem(24px) 0;
+      @include min(sm){ max-width: 616px; margin: 0 auto; padding: rem(159px) rem(39px) 0; }
+      @include min(md){ margin: 0; max-width: calc(470px + 160px); padding-left: rem(160px); padding-right: 0; padding-top: 0; display: flex; flex-direction: column; justify-content: center;}
+
+      // Navigation slider
+      .slider-number-nav {
+         position: absolute; top: 34px; left:0; right: 0; list-style: none; margin: 0; padding: 0; font-size: 0; line-height: 0; counter-reset: navCount;
+         @include min(sm){ top: 55px; }
+         @include min(md){ left: 0; top: 50%; transform: translateY(-50%); right: auto; }
+
+        li {
+          display: inline-block; margin: 0 rem(10px); counter-increment: navCount;
+          @include min(md){ display: block; margin: rem(12px) 0;}
+
+          &:first-child {
+            @include min(md){ margin-left: 0;}
+          }
+
+          &::before { display: block; content: counter(navCount); height: 39px; width: 39px; border:1px solid rgba($white,.25); transition: .3s all ease; color:$white; border-radius: 50%; text-align: center; font-size: rem(16px); line-height: 39px;
+            @include min(sm){ width: 59px; height: 59px; font-size: rem(24px); line-height: 59px; }
+            @include min(md){ width: 79px; height: 79px; font-size: rem(32px); line-height: 79px; }
+          }
+
+          &:hover {
+            &::before { border-color: $white; }
+          }
+          &.active {
+
+            &::before {color: $black; background-color: $white; border-color: $white;}
+          }
+        }
+      }
+
+      // Slider Textual content
+      .tab-wrapper { position: relative; }
+      .slider-number-tab {
+        padding: 0 0 0; transition: .3s all ease;
+
+        &.hide { display: none; }
+        &.active { display: block; }
+        &:not(.show) { opacity: 0; }
+
+        .h5 { margin-bottom: rem(7px); }
+        h2 { transition: .3s all ease; white-space: nowrap; margin-bottom: rem(16px);
+          @include min(md){ margin-bottom: rem(27px); }
+        }
+        p {
+          font-size: rem(15px); line-height: rem(25px); color: $blue; margin: 0;
+          @include min(sm){ font-size: rem(16px); line-height: rem(28px); }
+          @include min(md){ font-size: rem(18px); line-height: rem(32px); }
+        }
+      }
+    }
+  }
+}
