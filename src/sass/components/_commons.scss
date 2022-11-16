@@ -19,7 +19,7 @@ h3, .h3 { color: $white; font-size: rem(24px); line-height: rem(28px);
 }
 h4,.h4 { color: $white; opacity: .5; font-size: rem(16px); line-height: rem(18px); margin-bottom: rem(8px);
   @include min(sm){ font-size: rem(24px); line-height: rem(28px); }
-  @include min(md){ font-size: rem(32px); line-height: rem(37px);}
+  @include min(md){ font-size: rem(32px); line-height: rem(37px); margin-bottom: rem(15px); }
 }
 h5,.h5 { font-size: rem(16px); line-height: rem(19px); letter-spacing: rem(2.7px); margin-bottom: rem(16px); color: $blue;
   @include min(sm){ font-size: rem(20px); line-height: rem(24px); letter-spacing: rem(3.375px); margin-bottom: rem(24px); }
