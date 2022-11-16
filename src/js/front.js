@@ -63,7 +63,7 @@ $(document).ready(function () {
       $('.slider-tab p').text(data.crew[target].bio);
       $('.slider-tab').addClass('show');
       $('.picture img').addClass('show');
-    }, 200)
+    }, 400)
 
   });
 
