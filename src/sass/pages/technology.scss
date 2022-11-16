@@ -1,5 +1,5 @@
 /* ---- Crew ---- */
-.technology-wrap {
+.technology-wrap { overflow-x: hidden;
   section {
     min-height: 100vh; background-image:url('../img/technology/background-technology-mobile.jpg'); background-size: cover; background-position: bottom; text-align: center; padding: rem(88px) 0 rem(10px);
     @include min(sm){ background-image:url('../img/technology/background-technology-tablet.jpg'); padding: rem(136px) 0 0; }
@@ -7,7 +7,7 @@
 
     .container {
       @include min(sm){ height: calc(100vh - 136px);  }
-      @include min(md){ display: flex; justify-content: flex-end; height: calc(100vh - 212px); flex: 1; flex-wrap: wrap; width: 100%; flex-direction: column; }
+      @include min(md){ position: relative; display: flex; justify-content: flex-end; height: calc(100vh - 212px); flex: 1; flex-wrap: wrap; width: 100%; flex-direction: column; }
 
       >div { display: flex; flex-direction: column;
         @include min(sm){ height: 100%; }
@@ -15,8 +15,8 @@
     }
     h1 { width: 100%; margin-bottom: rem(32px); transition: .3s all ease; color: $white;
       @include min(sm){ text-align: left; margin-bottom: rem(59px); }
-      @include min(md){ margin-bottom: rem(30px); }
-      @include min(lg){ margin-bottom: rem(59px); }
+      @include min(md){ margin-bottom: rem(26px); }
+      @include min(lg){ margin-bottom: rem(26px); }
 
       &::before { content:'03'; display: inline-block; font-weight: 700; margin-right: rem(18px); opacity: .25; color: $white;
         @include min(sm){ margin-right: rem(19px); }
@@ -26,20 +26,25 @@
 
     .flexbox { margin: 0 rem(-24px);
       @include min(sm){ margin: 0 rem(-39px); }
-      @include min(md){ display: flex; flex-direction: row-reverse; justify-content: space-between; }
+      @include min(md){ display: flex; flex-direction: row-reverse;
+        //justify-content: space-between;
+        justify-content: flex-end; flex: 1;
+      }
     }
 
     .picture {
-      @include min(md){ flex: 1; max-width: 565px; display: flex; flex-direction: column; margin: 0; justify-content: flex-end; }
+      @include min(md){ flex: 1; max-width: 565px; display: flex; flex-direction: column; margin: 0; justify-content: flex-end;
+        position: absolute; left: calc(50% + (50vw - 42% + 78px) ); width: 35vw; right: auto; top: 50%; transform: translateY(-50%);
+      }
       @include min(lg){ }
 
       picture {
-        @include min(md){ margin: rem(-13vh) 0 0; height: calc(100% + 13vh); display: flex; align-items: flex-end; justify-content: flex-end;}
-        @include min(lg){ margin: rem(-150px) 0 0; height: calc(100% + 100px);}
+        @include min(md){ display: flex; align-items: flex-end; justify-content: flex-end; }
+        @include min(lg){}
         img {
           display: block; max-width: 100%; margin: 0 auto; transition: .3s max-width ease;
           @include min(sm){ max-width: 100%; }
-          @include min(md){ max-height: 76vh; margin: 0;}
+            @include min(md){ max-height: 76vh; margin: 0;}
           @include min(lg){ max-height: none;}
         }
       }
@@ -53,11 +58,11 @@
       .slider-number-nav {
          position: absolute; top: 34px; left:0; right: 0; list-style: none; margin: 0; padding: 0; font-size: 0; line-height: 0; counter-reset: navCount;
          @include min(sm){ top: 55px; }
-         @include min(md){ left: 0; top: 50%; transform: translateY(-50%); right: auto; }
+         @include min(md){ left: 39px; top: 50%; transform: translateY(-50%); right: auto; }
 
         li {
           display: inline-block; margin: 0 rem(10px); counter-increment: navCount;
-          @include min(md){ display: block; margin: rem(12px) 0;}
+          @include min(md){ display: block; margin: rem(32px) 0;}
 
           &:first-child {
             @include min(md){ margin-left: 0;}
@@ -65,7 +70,7 @@
 
           &::before { display: block; content: counter(navCount); height: 39px; width: 39px; border:1px solid rgba($white,.25); transition: .3s all ease; color:$white; border-radius: 50%; text-align: center; font-size: rem(16px); line-height: 39px;
             @include min(sm){ width: 59px; height: 59px; font-size: rem(24px); line-height: 59px; }
-            @include min(md){ width: 79px; height: 79px; font-size: rem(32px); line-height: 79px; }
+            @include min(lg){ width: 79px; height: 79px; font-size: rem(32px); line-height: 79px; }
           }
 
           &:hover {
