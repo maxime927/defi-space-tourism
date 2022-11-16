@@ -25,18 +25,20 @@ $(document).ready(function () {
 
     let target = $(this).attr('data-target');
     $('.tab').removeClass('show');
+    $('.picture img').removeClass('show');
 
     // Set new destination informations
-    $('.picture source.png').attr('srcset',data.destinations[target].images.png);
-    $('.picture source.webp').attr('srcset',data.destinations[target].images.webp);
-    $('.picture img').attr('src',data.destinations[target].images.webp);
     setTimeout(function(){
       // Set new destination informations
+      $('.picture source.png').attr('srcset',data.destinations[target].images.png);
+      $('.picture source.webp').attr('srcset',data.destinations[target].images.webp);
+      $('.picture img').attr('src',data.destinations[target].images.webp);
       $('.tab h2').text(data.destinations[target].name);
       $('.tab p').text(data.destinations[target].description);
       $('.tab .distance .subheading-1').text(data.destinations[target].distance);
       $('.tab .travel-time .subheading-1').text(data.destinations[target].travel);
       $('.tab').addClass('show');
+      $('.picture img').addClass('show');
     }, 200)
 
   });
@@ -49,17 +51,18 @@ $(document).ready(function () {
 
     let target = $(this).attr('data-target');
     $('.slider-tab').removeClass('show');
+    $('.picture img').removeClass('show');
 
-    // Set new crew informations
-    $('.picture source.png').attr('srcset',data.crew[target].images.png);
-    $('.picture source.webp').attr('srcset',data.crew[target].images.webp);
-    $('.picture img').attr('src',data.crew[target].images.webp);
     setTimeout(function(){
       // Set new crew informations
+      $('.picture source.png').attr('srcset',data.crew[target].images.png);
+      $('.picture source.webp').attr('srcset',data.crew[target].images.webp);
+      $('.picture img').attr('src',data.crew[target].images.webp);
       $('.slider-tab h2').text(data.crew[target].name);
       $('.slider-tab .h4').text(data.crew[target].role);
       $('.slider-tab p').text(data.crew[target].bio);
       $('.slider-tab').addClass('show');
+      $('.picture img').addClass('show');
     }, 200)
 
   });
@@ -72,15 +75,16 @@ $(document).ready(function () {
 
     let target = $(this).attr('data-target');
     $('.slider-number-tab').removeClass('show');
+    $('.picture img').removeClass('show');
 
-    // Set new technology informations
-    $('.picture source.jpg').attr('srcset',data.technology[target].images.portrait);
-    $('.picture img').attr('src',data.technology[target].images.landscape);
     setTimeout(function(){
       // Set new technology informations
+      $('.picture source.jpg').attr('srcset',data.technology[target].images.portrait);
+      $('.picture img').attr('src',data.technology[target].images.landscape);
       $('.slider-number-tab h2').text(data.technology[target].name);
       $('.slider-number-tab p').text(data.technology[target].description);
       $('.slider-number-tab').addClass('show');
+      $('.picture img').addClass('show');
     }, 200)
 
   });

@@ -42,10 +42,14 @@
         @include min(md){ display: flex; align-items: flex-end; justify-content: flex-end; }
         @include min(lg){}
         img {
-          display: block; max-width: 100%; margin: 0 auto; transition: .3s max-width ease;
+          display: block; max-width: 100%; margin: 0 auto; transition: .3s all ease;
           @include min(sm){ max-width: 100%; }
-            @include min(md){ max-height: 76vh; margin: 0;}
+          @include min(md){ max-height: 76vh; margin: 0;}
           @include min(lg){ max-height: none;}
+
+          &.hide { display: none; }
+          &.active { display: block; }
+          &:not(.show) { opacity: 0; }
         }
       }
     }
@@ -61,7 +65,7 @@
          @include min(md){ left: 39px; top: 50%; transform: translateY(-50%); right: auto; }
 
         li {
-          display: inline-block; margin: 0 rem(10px); counter-increment: navCount;
+          display: inline-block; margin: 0 rem(10px); cursor: pointer; counter-increment: navCount;
           @include min(md){ display: block; margin: rem(32px) 0;}
 
           &:first-child {
@@ -69,8 +73,8 @@
           }
 
           &::before { display: block; content: counter(navCount); height: 39px; width: 39px; border:1px solid rgba($white,.25); transition: .3s all ease; color:$white; border-radius: 50%; text-align: center; font-size: rem(16px); line-height: 39px;
-            @include min(sm){ width: 59px; height: 59px; font-size: rem(24px); line-height: 59px; }
-            @include min(lg){ width: 79px; height: 79px; font-size: rem(32px); line-height: 79px; }
+            @include min(sm){ width: 58px; height: 58px; font-size: rem(24px); line-height: 59px; }
+            @include min(lg){ width: 78px; height: 78px; font-size: rem(32px); line-height: 79px; }
           }
 
           &:hover {
