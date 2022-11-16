@@ -52,18 +52,21 @@ $(document).ready(function () {
     let target = $(this).attr('data-target');
     $('.slider-tab').removeClass('show');
     $('.picture img').removeClass('show');
-
     setTimeout(function(){
       // Set new crew informations
       $('.picture source.png').attr('srcset',data.crew[target].images.png);
       $('.picture source.webp').attr('srcset',data.crew[target].images.webp);
+    },300);
+
+    setTimeout(function(){
+      // Set new crew informations
       $('.picture img').attr('src',data.crew[target].images.webp);
       $('.slider-tab h2').text(data.crew[target].name);
       $('.slider-tab .h4').text(data.crew[target].role);
       $('.slider-tab p').text(data.crew[target].bio);
       $('.slider-tab').addClass('show');
       $('.picture img').addClass('show');
-    }, 400)
+    }, 500)
 
   });
 
