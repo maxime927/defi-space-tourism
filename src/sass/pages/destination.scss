@@ -11,7 +11,7 @@
 
       >div { display: flex; flex-direction: column;}
     }
-    h1 { width: 100%; margin-bottom: rem(32px); transition: .3s all ease;
+    h1 { width: 100%; margin-bottom: rem(32px); transition: .3s all ease; color: $white;
       @include min(sm){ text-align: left; margin-bottom: rem(59px); }
       @include min(md){ margin-bottom: rem(30px); }
       @include min(lg){ margin-bottom: rem(59px); }

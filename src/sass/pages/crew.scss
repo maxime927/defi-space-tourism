@@ -1,0 +1,90 @@
+/* ---- Crew ---- */
+.crew-wrap {
+  section {
+    min-height: 100vh; background-image:url('../img/crew/background-crew-mobile.jpg'); background-size: cover; background-position: bottom; text-align: center; padding: rem(88px) 0 rem(10px);
+    @include min(sm){ background-image:url('../img/crew/background-crew-tablet.jpg'); padding: rem(136px) 0 rem(62px); }
+    @include min(md){ background-image:url('../img/crew/background-crew-desktop.jpg'); background-position:center right; text-align: left; padding-bottom: rem(50px); padding-top: rem(140px); display: flex; align-items: flex-end;}
+    @include min(lg){ padding-bottom: rem(118px); }
+
+    .container {
+      @include min(md){ display: flex; justify-content: flex-end; height: 100%; flex: 1; flex-wrap: wrap; width: 100%; flex-direction: column; }
+
+      >div { display: flex; flex-direction: column;}
+    }
+    h1 { width: 100%; margin-bottom: rem(32px); transition: .3s all ease; color: $white;
+      @include min(sm){ text-align: left; margin-bottom: rem(59px); }
+      @include min(md){ margin-bottom: rem(30px); }
+      @include min(lg){ margin-bottom: rem(59px); }
+
+      &::before { content:'02'; display: inline-block; font-weight: 700; margin-right: rem(18px); opacity: .25; color: $white;
+        @include min(sm){ margin-right: rem(19px); }
+        @include min(md){ margin-right: rem(28px); }
+      }
+    }
+
+    .flexbox {
+      @include min(sm){ display: flex; flex-direction: column-reverse; justify-content: space-between; }
+      @include min(md){ display: flex; flex-direction: row-reverse; justify-content: space-between; }
+    }
+
+    .picture {
+      @include min(sm){ margin-bottom: rem(45px); }
+      @include min(md){ flex: 1; max-width: 565px; display: flex; flex-direction: column; justify-content: center; margin: 0; }
+      @include min(lg){ justify-content: flex-end; }
+
+      picture {
+        img {
+          display: block; max-width: 100%; margin: 0 auto; transition: .3s max-width ease; max-height: 223px;
+          @include min(sm){ max-width: 300px; }
+          @include min(lg){ max-width: 445px; }
+        }
+      }
+    }
+
+    .text { position: relative; padding-top: rem(74px); border-top: 1px solid #383B4B;
+      @include min(sm){ max-width: 573px; margin: 0 auto; padding-top: 0; }
+      @include min(md){ margin: 0; max-width: 445px; display: flex; flex-direction: column; justify-content: flex-end;}
+
+      // Navigation slider
+      .slider-nav {
+         position: absolute; top: 32px; left:0; right: 0; list-style: none; margin: 0; padding: 0; font-size: 0; line-height: 0;
+         @include min(sm){ position: relative; top: auto; left: auto; right: auto; }
+
+        li {
+          display: inline-block; margin: 0 rem(10px);
+
+          &::before { display: block; content: ''; height: 10px; width: 10px; transition: .3s all ease; background-color: $white; opacity: 0.17; border-radius: 50%; }
+
+          &:hover {
+            &::before { opacity: .5; }
+          }
+          &.active {
+            color: $white;
+            &::before { opacity: 1;}
+          }
+        }
+      }
+
+      // Slider Textual content
+      .tab-wrapper { position: relative; }
+      .slider-tab {
+        padding: 0 0 0; transition: .3s all ease;
+        @include min(sm){ padding-top: rem(32px); }
+        @include min(md){ padding-top: rem(20px); }
+        @include min(lg){ padding-top: rem(37px); }
+
+        &.hide { display: none; }
+        &.active { display: block; }
+        &:not(.show) { opacity: 0; }
+
+        .h4 {}
+        h2 { transition: .3s all ease; white-space: nowrap; margin-bottom: rem(16px); }
+        p {
+          font-size: rem(15px); line-height: rem(25px); color: $blue; margin: 0;
+          @include min(sm){ font-size: rem(16px); line-height: rem(28px); }
+          @include min(md){ font-size: rem(18px); line-height: rem(32px); }
+        }
+      }
+    }
+  }
+}

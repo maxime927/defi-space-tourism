@@ -41,6 +41,29 @@ $(document).ready(function () {
 
   });
 
+  // Crew nav
+  let btnSliderNav = $('.slider-nav li');
+  btnSliderNav.click(function() {
+    btnSliderNav.removeClass('active');
+    $(this).addClass('active');
+
+    let target = $(this).attr('data-target');
+    $('.slider-tab').removeClass('show');
+
+    // Set new destination informations
+    $('.picture source.png').attr('srcset',data.crew[target].images.png);
+    $('.picture source.webp').attr('srcset',data.crew[target].images.webp);
+    $('.picture img').attr('src',data.crew[target].images.webp);
+    setTimeout(function(){
+      // Set new destination informations
+      $('.slider-tab h2').text(data.crew[target].name);
+      $('.slider-tab .h4').text(data.crew[target].role);
+      $('.slider-tab p').text(data.crew[target].bio);
+      $('.slider-tab').addClass('show');
+    }, 200)
+
+  });
+
 });
 
 // Passive event listeners
